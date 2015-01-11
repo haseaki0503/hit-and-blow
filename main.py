@@ -21,36 +21,36 @@ def InputCheck(GuessInput):
     AnswerCheck(GuessInput)
 
 def AnswerCheck(GuessInput):
-        global hit
-        global blow
+  global hit
+  global blow
 
-        hit=0
-        blow=0
+  hit=0
+  blow=0
 
-        for x in range(0, 4):
-                if Answer[x] == GuessInput[x]:
-                        hit += 1
+  for x in range(0, 4):
+          if Answer[x] == GuessInput[x]:
+                  hit += 1
 
-        for x in range(0, 4):
-          for y in range(0, 4):
-            if Answer[x] == GuessInput[y]:
-              blow += 1
-              break
+  for x in range(0, 4):
+    for y in range(0, 4):
+      if Answer[x] == GuessInput[y]:
+        blow += 1
+        break
 
-        blow -= hit
-        print("hit= " + str(hit) + " " + "blow= " + str(blow))
+  blow -= hit
+  print("hit= " + str(hit) + " " + "blow= " + str(blow))
 
 #MAIN
 print("Hit and Blow GAME!!")
 Initialization()
 
 while (1):
-  GuessInput = input("Guess===>")
+  GuessInput = input("Guess >")
   InputCheck(GuessInput)
 
   if hit == 4:
     print("Congratulations! You're WON!! ")
     break
   if i == 10:
-    print("You're LOST...Answer is " + str(Answer[0])+str(Answer[1])+str(Answer[2])+str(Answer[3]))
+    print("You're LOST...Answer is " + str(Answer[0]) + str(Answer[1]) + str(Answer[2]) + str(Answer[3]))
     break
